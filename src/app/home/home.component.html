@@ -3,7 +3,7 @@
   <p class="disclaimer">Candidates are displayed in random order on each page load to ensure fair visibility.</p>
   <div class="candidates-list">
     <rhf-candidate
-      *ngFor="let candidate of candidates"
+      *ngFor="let candidate of displayCandidates"
       [candidate]="candidate"
       (details)="goToDetails(candidate)"
     ></rhf-candidate>
