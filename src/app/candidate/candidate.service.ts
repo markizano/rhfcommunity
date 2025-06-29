@@ -13,6 +13,7 @@ export class CandidateService {
     this.loadCandidates().subscribe({
       next: (response) => {
         this.candies = response.map((c, i) => { return { id: i, ...c }; });
+        this.candies = this.shuffle(this.candies);
         this.candidates.emit(this.candies);
       }, error: err => {
         console.error(err);
@@ -24,6 +25,19 @@ export class CandidateService {
     return this.http.get<Omit<Candidate, 'id'>[]>('/candidates.json');
   }
 
+  /**
+   * Shuffles an array using the Fisher-Yates algorithm
+   * @param array - The array to shuffle
+   * @returns A new shuffled array
+   */
+  private shuffle<T>(array: T[]): T[] {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
 
   getCandidates(): Candidate[] {
     console.log('CandidateService.getCandidates()', this.candies);
