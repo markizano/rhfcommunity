@@ -1,6 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 
 import { Candidate } from 'app/app.types';
 import { CandidateComponent } from 'app/candidate/candidate.component';
@@ -14,18 +13,21 @@ import { CandidateService } from 'app/candidate/candidate.service';
   standalone: true,
 })
 export class HomeComponent implements OnInit {
+  private candidatesService = inject(CandidateService);
+  
   candidates: Candidate[] = [];
 
-  private router = inject(Router);
-  private candidateService = inject(CandidateService);
-
-  ngOnInit() {
-    this.candidateService.getCandidates().subscribe((candidates: Candidate[]) => {
+  constructor() {
+    this.candidatesService.candidates.subscribe(candidates => {
       this.candidates = candidates;
     });
   }
 
+  ngOnInit(): void {
+    this.candidates = this.candidatesService.getCandidates();
+  }
+  
   goToDetails(candidate: Candidate) {
-    this.router.navigate(['/candidate', candidate.id]);
+    window.location.href = `/candidate/${candidate.id}`;
   }
 }

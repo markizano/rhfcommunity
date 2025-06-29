@@ -1,0 +1,78 @@
+candidates:
+- name: William (Bill) Fox
+  email: specterengineering@gmail.com
+  lots:
+  - 4
+  address: 1423 REDHILL RD
+  photo: images/bfox.profile.jpg
+  card: images/bfox.card.jpg
+  bio: |-
+    My name is William D. Fox, and I'm a full-time Redhill Forest resident and retired professional 
+    running for the Board of Managers. I'm committed to improving transparency, rebuilding trust, and 
+    involving members in decisions that shape our community. With the time and dedication to serve, I 
+    support responsible spending, fair and consistent policies, and alignment with our governing 
+    documents. I want to enhance our common areas, fire mitigation, and walkability, while attracting 
+    quality builders to boost property values and RHF's reputation. I believe in open communication, 
+    social connection, and creating a welcoming, engaged community where every voice is heard.
+
+- name: Dwight Getting
+  email: dgetting@gmail.com
+  lots:
+  - 456
+  address: 3172 REDHILL RD
+  photo: images/dgetting.profile.jpg
+  card: images/dgetting.card.jpg
+  bio: |-
+    I've proudly called Colorado home for the past 10 years and can't imagine living anywhere else, The 
+    mountains are a big part of my life, especially the Alma/FairPlay area, where I spend much of my 
+    time and am currently planning my next home build in Redhill. With over 25 years of experience as a 
+    design and marketing business owner, I've worked with companies of all sizes and bring valuable 
+    management and building experience to the table. I'm a team player who thrives on collaboration and 
+    challenges. As a candidate, I'm committed to being open-minded, listening to all perspectives, and 
+    helping guide thoughtful decisions that serve the best interests of our community.
+
+- name: Suzette Watkins
+  email: timeaway@gmail.com
+  lots:
+  - 538
+  address: 5815 MIDDLE FORK VISTA
+  photo: images/swatkins.profile.jpg
+  card: images/swatkins.card.jpg
+  bio: |-
+    Hi, I'm Suzette Watkins, and I'm running for the Redhill HOA Board because I believe it's 
+    time your voice was truly heard. I'm a proven visionary, a direct communicator, a critical 
+    thinker, and someone who genuinely values great customer service. I'm running to bring 
+    transparency back to our HOA, limit board and committee overreach, and make sure every member has a 
+    say in what happens in our community. I'll push for road and common area improvements, and I'm 
+    committed to ending secrecy in our governing processes. This is our community, and I'll work 
+    hard to ensure it reflects all of us.
+
+- name: Barbara Hancin
+  email: bjhancin@gmail.com
+  lots:
+  - 200
+  - 412
+  address: 803 Bonell & 2773 Middle Fork Vista
+  photo: images/bhancin.profile.jpg
+  card: images/bhancin.card.jpg
+  bio: |-
+    I'm a full-time resident on Bonell, hoping to build our family's dream home on my Middle Fork Vista 
+    lot. I care about this community — not just how it looks, but how it feels to be here. I want to 
+    help maintain what we've built, while planning smartly for the future and strengthening our 
+    connections as RHF property owners.
+
+- name: Mark E Harris Jr
+  email: redhill@markizano.net
+  lots:
+  - 201
+  address: 2833 Middle Fork Vista
+  photo: images/mharris.profile.jpg
+  card: images/mharris.card.jpg
+  additionalMedia:
+  - type: youtube
+    url: foQgbr6BzEw
+    description: Campaign Video
+  bio: |-
+    I'm an IT professional with over 20 years of experience. I'm a team player. I'm fact and data 
+    driven. I want to see an upgrade to the way we do work within the board and introduce us to the 
+    digital age to leverage solutions that will help streamline operations and communications.

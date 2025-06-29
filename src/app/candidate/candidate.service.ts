@@ -1,17 +1,36 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
 import { Candidate } from 'app/app.types';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class CandidateService {
-  constructor(private http: HttpClient) {}
+  public candidates: EventEmitter<Candidate[]> = new EventEmitter<Candidate[]>();
+  private candies: Candidate[] = [];
 
-  getCandidates(): Observable<Candidate[]> {
-    return this.http.get<Candidate[]>('/candidates.json');
+  constructor(private http: HttpClient) {
+    this.loadCandidates().subscribe({
+      next: (response) => {
+        this.candies = response.map((c, i) => { return { id: i, ...c }; });
+        this.candidates.emit(this.candies);
+      }, error: err => {
+        console.error(err);
+      }
+    });
   }
 
-  getCandidate(name: string): Observable<Candidate> {
-    return this.http.get<Candidate>(`/candidates/${name}.json`);
+  loadCandidates(): Observable<Candidate[]> {
+    return this.http.get<Omit<Candidate, 'id'>[]>('/candidates.json');
   }
-} 
+
+
+  getCandidates(): Candidate[] {
+    console.log('CandidateService.getCandidates()', this.candies);
+    return this.candies;
+  }
+
+  getCandidate(i: number): Candidate {
+    return this.candies[i];
+  }
+}

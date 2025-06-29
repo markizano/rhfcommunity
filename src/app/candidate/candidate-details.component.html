@@ -2,12 +2,32 @@
   <a href="/" class="candidate-details-back-link">&larr; Back to Candidate List</a>
 </div>
 <div *ngIf="candidate" class="candidate-details-container">
-  <img class="candidate-details-photo" [src]="candidate.photoUrl" [alt]="candidate.name" />
-  <h2 class="candidate-details-name">{{ candidate.name }}</h2>
+  <!-- Candidate Card Image -->
+  <img *ngIf="candidate.card" class="candidate-details-card" [src]="candidate.card" [alt]="candidate.name + ' promotional card'" />
+  
+  <!-- Candidate Photo and Basic Info -->
+  <div class="candidate-details-header">
+    <img class="candidate-details-photo" [src]="candidate.photo" [alt]="candidate.name" />
+    <div class="candidate-details-info">
+      <h2 class="candidate-details-name">{{ candidate.name }}</h2>
+      <div class="candidate-details-contact">
+        <div *ngIf="candidate.email" class="candidate-details-email">
+          <strong>Email: &nbsp; </strong> <a [href]="'mailto:' + candidate.email">{{ candidate.email }}</a>
+        </div>
+        <div *ngIf="candidate.lots?.length" class="candidate-details-lots">
+          <strong>Lot(s): &nbsp; </strong> {{ candidate.lots.join(', ') }}
+        </div>
+        <div *ngIf="candidate.address" class="candidate-details-address">
+          <strong>Address: &nbsp; </strong> {{ candidate.address }}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Candidate Bio -->
   <div class="candidate-details-bio">{{ candidate.bio }}</div>
-  <div class="candidate-details-reason">{{ candidate.reasonForRunning }}</div>
-  <a *ngIf="candidate.learnMoreUrl" class="candidate-details-link" [href]="candidate.learnMoreUrl" target="_blank" rel="noopener">Learn More</a>
-  <div *ngIf="candidate.whyVoteForMe" class="candidate-details-why">{{ candidate.whyVoteForMe }}</div>
+  
+  <!-- Additional Media (if any) -->
   <div *ngIf="candidate.additionalMedia?.length" class="candidate-details-media">
     <div *ngFor="let media of candidate.additionalMedia">
       <ng-container [ngSwitch]="media.type">
@@ -15,10 +35,10 @@
         <video *ngSwitchCase="'video'" [src]="media.url" controls class="candidate-media-video"></video>
         <iframe *ngSwitchCase="'youtube'"
           class="candidate-media-video"
-          [src]="`https://www.youtube.com/embed/${media.url}`"
+          [src]="getYouTubeUrl(media)"
           title="YouTube video player"
           frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </ng-container>
       <div class="candidate-media-description">{{ media.description }}</div>

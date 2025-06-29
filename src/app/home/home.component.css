@@ -13,7 +13,19 @@
   gap: 2rem;
   justify-content: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 1400px;
+}
+
+@media (min-width: 1200px) {
+  .candidates-list {
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .candidates-list {
+    max-width: 1800px;
+  }
 }
 
 @media (max-width: 700px) {

@@ -1,8 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { Candidate } from 'app/app.types';
+import { Candidate, MediaType } from 'app/app.types';
 import { CandidateService } from 'app/candidate/candidate.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'rhf-candidate-details',
@@ -12,17 +13,32 @@ import { CandidateService } from 'app/candidate/candidate.service';
   styleUrls: ['./candidate-details.component.css']
 })
 export class CandidateDetailsComponent implements OnInit {
-  candidate?: Candidate;
+  candidates: Candidate[] = [];
+  candidate: Candidate = <Candidate>{};
 
   private route = inject(ActivatedRoute);
-  private candidateService = inject(CandidateService);
+  private candidatesService = inject(CandidateService);
 
-  ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.candidateService.getCandidate(id).subscribe((candidate: Candidate) => {
-        this.candidate = candidate;
-      });
+  constructor(private sanitizer: DomSanitizer) {
+    this.candidatesService.candidates.subscribe(candidates => {
+      this.candidates = candidates;
+      this.loadCandidate();
+    });
+  }
+
+  ngOnInit(): void {
+    this.loadCandidate();
+  }
+
+  loadCandidate(): void {
+    const id = parseInt(<string>this.route.snapshot.paramMap.get('id'));
+    console.log('CandidateDetailsComponent.init()', id, this.candidates);
+    if (id !== null) {
+      this.candidate = this.candidates[id];
     }
+  }
+  getYouTubeUrl(media: MediaType): SafeResourceUrl {
+    // The url comes from hardcoded server-based resources, not user input.
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${media.url}`);
   }
 }

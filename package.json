@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "postbuild": "node bin/resources.js",
     "build": "ng build --configuration=${NODE_ENV:-production}",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

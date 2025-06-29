@@ -4,13 +4,14 @@ export type MediaType = {
   description?: string,
 };
 
-export interface Candidate {
-  id: string;
-  name: string;
-  photoUrl: string;
-  bio: string;
-  reasonForRunning: string;
-  learnMoreUrl?: string;
-  whyVoteForMe?: string;
-  additionalMedia?: MediaType[];
+export type Candidate = {
+  id?: number,
+  name: string,
+  email: string,
+  lots: string[],
+  address: string,
+  photo: string,
+  card: string,
+  bio: string,
+  additionalMedia?: MediaType[],
 };

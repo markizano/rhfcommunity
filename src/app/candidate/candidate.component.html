@@ -1,7 +1,6 @@
 <div class="candidate-card">
-  <img class="candidate-photo" [src]="candidate.photoUrl" [alt]="candidate.name" />
+  <img class="candidate-photo" [src]="candidate.photo" [alt]="candidate.name" />
   <div class="candidate-name">{{ candidate.name }}</div>
   <div class="candidate-bio">{{ candidate.bio }}</div>
-  <div class="candidate-reason">{{ candidate.reasonForRunning }}</div>
   <button class="details-link" (click)="onDetails()">See Details</button>
 </div>

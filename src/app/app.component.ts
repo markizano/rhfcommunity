@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+import { CandidateService } from 'app/candidate/candidate.service';
 
 @Component({
   selector: 'rhf-root',
@@ -9,4 +11,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'rhf-website';
+  private candidateService = inject(CandidateService);
 }

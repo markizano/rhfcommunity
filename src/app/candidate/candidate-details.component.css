@@ -18,27 +18,78 @@
   }
 }
 
+.candidate-details-card {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 1rem;
+  border: 2px solid var(--secondary);
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px var(--primary-transparent);
+}
+
+.candidate-details-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
 .candidate-details-photo {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--primary);
-  margin-bottom: 1.25rem;
+  flex-shrink: 0;
 }
+
+.candidate-details-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 .candidate-details-name {
   font-size: 2rem;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 0.75rem;
-  text-align: center;
+  margin: 0;
+  text-align: left;
 }
+
+.candidate-details-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.candidate-details-email,
+.candidate-details-lots,
+.candidate-details-address {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.candidate-details-email a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.candidate-details-email a:hover {
+  text-decoration: underline;
+}
+
 .candidate-details-bio {
   color: var(--accent);
   font-size: 1.1rem;
   margin-bottom: 0.75rem;
   text-align: center;
+  line-height: 1.6;
 }
+
 .candidate-details-reason {
   color: var(--secondary);
   font-size: 1.05rem;
@@ -108,9 +159,20 @@
     padding: 1.25rem 0.5rem 1rem 0.5rem;
     max-width: 98vw;
   }
+  .candidate-details-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
   .candidate-details-photo {
     width: 90px;
     height: 90px;
+  }
+  .candidate-details-name {
+    text-align: center;
+  }
+  .candidate-details-card {
+    max-width: 98vw;
   }
   .candidate-media-photo, .candidate-media-video {
     max-width: 98vw;
