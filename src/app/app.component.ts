@@ -4,9 +4,9 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'rhf-root',
   imports: [RouterOutlet],
-  templateUrl: './app.html',
+  templateUrl: './app.component.html',
   styles: [],
 })
-export class App {
-  protected title = 'rhf-website';
+export class AppComponent {
+  title = 'rhf-website';
 }
