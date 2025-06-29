@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { Candidate } from 'app/app.types';
+import { CandidateComponent } from 'app/candidate/candidate.component';
 
 @Component({
   selector: 'rhf-home',
-  imports: [ CommonModule ],
+  imports: [ CommonModule, CandidateComponent ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,

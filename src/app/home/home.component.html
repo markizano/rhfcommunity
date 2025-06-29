@@ -1,12 +1,10 @@
 <div class="home-container">
   <h1>Redhill Forest HOA Candidates</h1>
   <div class="candidates-list">
-    <div class="candidate-card" *ngFor="let candidate of candidates">
-      <img class="candidate-photo" [src]="candidate.photoUrl" [alt]="candidate.name" />
-      <div class="candidate-name">{{ candidate.name }}</div>
-      <div class="candidate-bio">{{ candidate.bio }}</div>
-      <div class="candidate-reason">{{ candidate.reasonForRunning }}</div>
-      <button class="details-link" (click)="goToDetails(candidate)">See Details</button>
-    </div>
+    <rhf-candidate
+      *ngFor="let candidate of candidates"
+      [candidate]="candidate"
+      (details)="goToDetails(candidate)"
+    ></rhf-candidate>
   </div>
 </div>

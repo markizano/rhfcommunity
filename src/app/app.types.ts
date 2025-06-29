@@ -1,3 +1,9 @@
+export type MediaType = {
+  type: 'photo' | 'video' | 'youtube',
+  url: string,
+  description?: string,
+};
+
 export interface Candidate {
   id: string;
   name: string;
@@ -6,9 +12,5 @@ export interface Candidate {
   reasonForRunning: string;
   learnMoreUrl?: string;
   whyVoteForMe?: string;
-  additionalMedia?: Array<{
-    type: 'photo' | 'video';
-    url: string;
-    description?: string;
-  }>;
-} 
+  additionalMedia?: MediaType[];
+};

@@ -1,0 +1,142 @@
+.candidate-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--neutral);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 16px var(--primary-transparent);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 900px;
+}
+
+@media (min-width: 900px) {
+  .candidate-details-container {
+    width: 60%;
+    min-width: 500px;
+  }
+}
+
+.candidate-details-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary);
+  margin-bottom: 1.25rem;
+}
+.candidate-details-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+.candidate-details-bio {
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+.candidate-details-reason {
+  color: var(--secondary);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+.candidate-details-link {
+  background: var(--primary);
+  color: var(--neutral);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+}
+.candidate-details-link:hover {
+  background: var(--secondary);
+  color: var(--neutral);
+}
+.candidate-details-why {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  font-style: italic;
+}
+.candidate-details-media {
+  width: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.candidate-media-photo {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 1rem;
+  border: 2px solid var(--secondary);
+  margin-bottom: 0.5rem;
+}
+.candidate-media-video {
+  width: 100%;
+  min-height: 200px;
+  max-width: 350px;
+  border-radius: 1rem;
+  border: 2px solid var(--secondary);
+  margin-bottom: 0.5rem;
+}
+.candidate-media-description {
+  color: var(--accent);
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.candidate-details-notfound {
+  color: var(--primary);
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.25rem;
+}
+@media (max-width: 600px) {
+  .candidate-details-container {
+    padding: 1.25rem 0.5rem 1rem 0.5rem;
+    max-width: 98vw;
+  }
+  .candidate-details-photo {
+    width: 90px;
+    height: 90px;
+  }
+  .candidate-media-photo, .candidate-media-video {
+    max-width: 98vw;
+  }
+}
+
+.candidate-details-back {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto 0.5rem auto;
+  display: flex;
+  justify-content: flex-start;
+}
+.candidate-details-back-link {
+  background: var(--primary-transparent);
+  color: var(--primary);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+}
+.candidate-details-back-link:hover {
+  background: var(--primary);
+  color: var(--neutral);
+} 
